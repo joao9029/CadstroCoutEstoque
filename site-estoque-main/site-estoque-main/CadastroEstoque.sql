@@ -1,6 +1,8 @@
 create database Estoque;
 use Estoque;
-
+-- possivel tabela estoque
+-- possivel tabela fornecedor
+-- possivel tabela cliente
 
 -- os produtos, o basico tipo comida, limpeza, etc,
 create table Produtos(
@@ -11,6 +13,7 @@ dt_validade_produto date not null,
 ds_produto varchar(255) not null
 
 );
+
 
 
 -- e na onde os produtos vão fica, pq n ´pode deixar bagunçado, exemplo(categorias: comida, limpeza, higiene, congelador
@@ -26,7 +29,6 @@ create table Funcionarios (
 cd_funcionario int unique primary key auto_increment not null,
 nm_funcionario varchar(100) not null,
 dt_nascimento date not null,
-ds_setor varchar(50),
 ds_telefone varchar(20),
 ds_email varchar(100),
 ds_cargo enum('admin', 'vendedor', 'estoquista') default 'vendedor',
@@ -80,6 +82,7 @@ foreign key (id_venda) references Vendas(cd_venda),
 foreign key (id_produto) references Produtos(cd_produto)
 );
 
+-- inner join
 select p.nm_produto, c.nm_categoria
 from produtos p
 inner join produto_categoria pc on p.cd_produto = pc.id_produto
@@ -89,3 +92,26 @@ select c.cd_compra, p.nm_produto, qt_produto, ic.vl_unitario
 from compras c
 inner join itens_compra ic on c.cd_compra = ic.id_compra
 inner join produtos p on ic.id_produto = p.cd_produto;
+
+
+-- admin
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("JoãoLucas", "03/07/2010", "23904-123", "joao.aura@empresario.com", "admin", "123456");
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("IsaqueSevero", "21/09/2009", "12345-777", "Isaque.severo@empresario.com", "admin", "123456");
+
+-- gerente
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("JoãoLucas", "03/07/2010", "23904-123", "joao.gerente@empresario.com", "vendedor", "123456");
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("IsaqueSevero", "21/09/2009", "12345-777", "isaque.gerente@empresario.com", "vendedor", "123456");
+
+-- estoquista
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("JoãoLucas", "03/07/2010", "23904-123", "joao.CLT@empresario.com", "estoquista", "123456");
+insert into Funcionarios (nm_funcionario, dt_nascimento, ds_telefone, ds_email, ds_cargo, ds_senha) 
+VALUES ("IsaqueSevero", "21/09/2009", "12345-777", "isaque.CLT@empresario.com", "estoquista", "123456");
+
+
+-- Produtosw
+	   
