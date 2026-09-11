@@ -1,0 +1,282 @@
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+        }
+
+        .navbar {
+            height: 65px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .usuario {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .usuario-info {
+            text-align: right;
+        }
+
+        .usuario-nome {
+            font-weight: bold;
+            color: #f1f5f9;
+        }
+
+        .usuario-cargo {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .btn-sair {
+            background: #ef4444;
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 7px;
+            transition: 0.2s;
+        }
+
+        .btn-sair:hover {
+            background: #dc2626;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 65px;
+            left: 0;
+            width: 240px;
+            height: calc(100vh - 65px);
+            background: rgba(15, 23, 42, 0.95);
+            border-right: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 20px 12px;
+        }
+
+        .menu-titulo {
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 13px 15px;
+            margin-bottom: 5px;
+            border-radius: 7px;
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            background: rgba(56, 189, 248, 0.15);
+            color: #e0f2fe;
+        }
+
+        .menu a.ativo {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        .icone {
+            width: 25px;
+            text-align: center;
+        }
+
+        .conteudo {
+            margin-left: 240px;
+            padding: 95px 30px 30px;
+        }
+
+        .cabecalho-pagina {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .cabecalho-pagina h1 {
+            font-size: 28px;
+            color: #f1f5f9;
+        }
+
+        .cabecalho-pagina p {
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .btn-adicionar {
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-adicionar:hover {
+            background: #0284c7;
+            color: white;
+        }
+
+
+        .table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            color: #e2e8f0;
+        }
+
+        .table thead th {
+            background: rgba(15, 23, 42, 0.9) !important;
+            color: #e2e8f0 !important;
+            border: none;
+        }
+
+        .table td,
+        .table th {
+            border-color: rgba(148, 163, 184, 0.15) !important;
+            vertical-align: middle;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, 0.03);
+            color:#fff;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(108, 202, 243, 0.41) !important;
+        }
+
+
+        .modal-content {
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .modal-footer {
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .form-control {
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            color: #f1f5f9;
+        }
+
+        .form-control:focus {
+            background-color: rgba(15, 23, 42, 0.8);
+            border-color: #0ea5e9;
+            color: #f1f5f9;
+            box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.25);
+        }
+
+        .close {
+            color: #e2e8f0;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 70px;
+            }
+
+            .menu-titulo {
+                display: none;
+            }
+
+            .menu a {
+                justify-content: center;
+            }
+
+            .menu a span:not(.icone) {
+                display: none;
+            }
+
+            .conteudo {
+                margin-left: 70px;
+            }
+
+            .usuario-info {
+                display: none;
+            }
+
+            .cabecalho-pagina {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+      
+      
+
+        .btn-adicionar {
+            background: #0ea5e9;
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-adicionar:hover {
+            background: #0284c7;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+
+        .card p {
+            color: #94a3b8;
+        }
+
+       
+        
